@@ -34,12 +34,13 @@ export default class Meals {
         form.append('redirect_url', '');
 
         // Get session cookie
-        await fetch(url_faidherbe + 'accueil.html', {
+        const loc = await fetch(url_faidherbe + 'accueil.html', {
             method: 'POST',
             body: form,
             credentials: 'include'
-        }).then(content => content.headers.get('Location')) //.then(c => c.replace(/path=\/.?/g,''));
-        // console.log(headers)
+        }).then(content => content.text()).then(t => t.includes('Identification incorrecte')) //.then(c => c.replace(/path=\/.?/g,''));
+        // console.log(!loc);
+        return !loc;
     }
     async getMeals() {
         // debugger;
