@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="me.theophile.faidherbe" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Companion Faidherbe</name>
+    <name>Faidherbe</name>
     <description>
-        Un companion faidherbard
+        Un compagnon faidherbard
     </description>
     <author email="theophile.cailliau@gmail.com" href="https://theophile.me">
         Théophile Cailliau
