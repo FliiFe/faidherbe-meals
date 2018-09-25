@@ -86,11 +86,11 @@ export default class Meals {
                 failureReason: '',
                 fe_uid: this.initialData.loggedUser.uid,
                 state: 0,
-                requests: list.map(({ serviceDate, serviceType, service_uid }) => ({
+                requests: list.map(({ serviceDate, serviceType, service_uid, mealNumber }) => ({
                     serviceDate,
                     serviceType: serviceType.toString(),
                     id: "AfeResa.model.RequestModel-1",
-                    mealNumber: 1,
+                    mealNumber: mealNumber || 1,
                     servicePrice: 0,
                     service_uid,
                     chainId: 0

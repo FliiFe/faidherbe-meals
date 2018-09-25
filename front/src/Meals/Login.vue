@@ -3,11 +3,14 @@
         <v-text-field
             v-model="username"
             label="Identifiant"
+            hint="Identifiant du site de réservation de repas"
             required outline></v-text-field>
         <v-text-field
             v-model="password"
             label="Mot de passe"
-            type="password"
+            :type="show ? 'text' : 'password'"
+            :append-icon="show ? 'visibility_off' : 'visibility'"
+            @click:append="show = !show"
             required outline></v-text-field>
         <v-btn color="indigo" flat class="float-right" @click="connect" :loading="loading" :disabled="username.length <= 5 || password.length <= 5">Connexion</v-btn>
         <v-snackbar bottom v-model="snackbar" :timeout="10000">
@@ -28,6 +31,7 @@ export default {
             password: '',
             loading: false,
             snackbar: false,
+            show: false,
         }
     },
     methods: {

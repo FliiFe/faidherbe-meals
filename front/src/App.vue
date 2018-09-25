@@ -73,4 +73,19 @@ body, html {
     transition: opacity 0.1s ease-in-out;
     opacity: 0;
 }
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    user-select: none;
+}
+
+[contenteditable="true"] , input, textarea {
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    -o-user-select: auto !important;
+    user-select: auto !important;  
+}
 </style>
