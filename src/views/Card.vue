@@ -15,17 +15,39 @@
                     color="indigo"
                     class="bookwait"
                     v-if="fetchingAvailable"></v-progress-circular>
-                <table>
-                    <tr v-for="day in Object.keys(availableDays)" :key="day">
-                        <td class="day-cell">{{ d2h(new Date(day*1e3)) }}</td>
-                        <td><v-checkbox color="indigo" :disabled="booking || bookingAll" class="checkbox" v-show="checkboxes[day].a !== undefined"
-                                                                                                          v-model="checkboxes[day].a"></v-checkbox>
-                        </td>
-                        <td><v-checkbox color="indigo" :disabled="booking || bookingAll" class="checkbox" v-show="checkboxes[day].b !== undefined"
-                                                                                                          v-model="checkboxes[day].b"></v-checkbox>
-                        </td>
-                    </tr>
-                </table>
+                <v-simple-table v-show="Object.keys(availableDays).length > 0">
+                    <template v-slot:default>
+                        <thead>
+                            <tr>
+                                <th class="text-left">
+                                    Jour
+                                </th>
+                                <th class="text-center">
+                                    Midi
+                                </th>
+                                <th class="text-center">
+                                    Soir
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="day in Object.keys(availableDays)" :key="day">
+                                <td class="text-left">{{ d2h(new Date(day*1e3)) }}</td>
+                                <td class="text-center"><v-checkbox color="indigo" :disabled="booking || bookingAll || checkboxes[day].b == undefined"
+                                                class="checkbox" :indeterminate="checkboxes[day].a == undefined"
+                                                hide-details
+                                                v-model="checkboxes[day].a"></v-checkbox>
+                                </td>
+                                <td class="text-center"><v-checkbox color="indigo" :disabled="booking || bookingAll || checkboxes[day].b == undefined"
+                                                class="checkbox"
+                                                hide-details
+                                                :indeterminate="checkboxes[day].b == undefined"
+                                                v-model="checkboxes[day].b"></v-checkbox>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </template>
+                </v-simple-table>
             </div>
             <div class="separator"></div>
             <!-- Hey -->
@@ -41,12 +63,7 @@
             <v-snackbar bottom v-model="snackbar" :timeout="10000">
                 {{ snackMessage }}
                 <template v-slot:action="{ attrs }">
-                    <v-btn
-                        color="white"
-                        text
-                        v-bind="attrs"
-                        @click="snackbar = false"
-                        >
+                    <v-btn color="white" text v-bind="attrs" @click="snackbar = false">
                         Ok
                     </v-btn>
                 </template>
@@ -231,6 +248,11 @@ export default {
     justify-content: space-between;
 }
 
+.meals-precise-booking {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+}
+
 .money {
     margin-right: 16px;
 }
@@ -253,30 +275,20 @@ export default {
     margin-bottom: -2px;
 }
 
-table {
-    width: 100%;
-    padding: 10px;
-    padding-left: 20px;
-}
-
-.checkbox {
-    display: inline-block;
-    height: 15px;
-}
-
-td, th {
-    text-align: center;
-}
-
-.day-cell {
-    text-align: left;
-}
-
 .bookall {
     display: inline-block;
 }
 
 .book-container {
     display: flex;
+}
+
+.checkbox {
+    display: inline-block;
+    /* border: 1px solid black; */
+    padding-left: 8px;
+    padding-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 </style>

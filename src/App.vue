@@ -24,15 +24,25 @@ export default {
     src: url('assets/fonts/google-sans-regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/roboto-regular.ttf') format('truetype');
+}
+
 body, html {
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
+:hover:before {
+    background-color: transparent !important;
+}
+
+
 #app {
     font-family: 'Roboto', sans-serif;
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
 }
 
 .googlesans {
@@ -64,10 +74,6 @@ body, html {
 
 .fade-enter-active {
     transition: opacity 0.1s ease-in-out;
-}
-
-.fade-leave {
-
 }
 
 .fade-leave-active {

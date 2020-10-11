@@ -18,6 +18,6 @@ new Vue({
 }).$mount('#app')
 
 document.addEventListener('deviceready', () => {
-    window.StatusBar.backgroundColorByHexString("#fafafa");
+    window.StatusBar.backgroundColorByHexString("#ffffff");
     window.StatusBar.styleDefault();
 })

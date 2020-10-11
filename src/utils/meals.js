@@ -9,6 +9,7 @@ const hash_password = (challenge, username, password) =>
 const preq = (url, options) => new Promise((resolve, reject) => {
     window.cordova.plugin.http.sendRequest(url, options, resolve, reject)
 })
+const waitReady = () => new Promise((res) => document.addEventListener('deviceready', res))
 
 export default class Meals {
     constructor(username, password) {
@@ -16,6 +17,7 @@ export default class Meals {
         this.password = password;
     }
     async connect() {
+        await waitReady()
         console.log('connecting')
         window.cordova.plugin.http.clearCookies();
         // Get challenge and pid
@@ -56,18 +58,15 @@ export default class Meals {
         console.log('getting meals')
         this.initialData = await preq(url_faidherbe + 'menu-utilisateur/reservation.html')
             .then(t => t.data)
-            .then(t => {console.log(0, t); return t})
             .then(text =>
                 text
                     .split('\n')
                     .filter(e => e.includes('gecData'))
                     .join('')
             )
-            .then(t => {console.log(1, t); return t})
             .then(text => text.replace(/^.+var.*?=/, '').replace(/..script.$/, ''))
-            .then(t => {console.log(2, t); return t})
             .then(text => JSON.parse(text));
-        console.log('initialData', this.initialData, this)
+        // console.log('initialData', this.initialData, this)
 
         this._available = [];
         this.initialData.userConfig.requestableDays[0].forEach((day, dayi) =>
@@ -118,7 +117,6 @@ export default class Meals {
             serializer: 'json',
             data: reqobj
         }).then(response => response.data);
-        console.log('resp,reqobj', response, reqobj)
 
         try {
             JSON.parse(response);
