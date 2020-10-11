@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="591"
+   height="591"
+   viewBox="0 0 5910 5910"
+   id="svg912"
+   sodipodi:docname="logofaidherbe_good.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:export-filename="/home/fliife/Downloads/logofaidherbe_good.svg.png"
+   inkscape:export-xdpi="195.61847"
+   inkscape:export-ydpi="195.61847">
+  <metadata
+     id="metadata918">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs916" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="923"
+     inkscape:window-height="1001"
+     id="namedview914"
+     showgrid="false"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="12.876651"
+     inkscape:cy="256.86297"
+     inkscape:window-x="970"
+     inkscape:window-y="52"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg912" />
+  <g
+     id="g890"
+     transform="matrix(2.1536561,0,0,2.1536561,-3396.5026,-1452.4572)"
+     style="fill:#555555;fill-opacity:1">
+    <path
+       d="m 2583,2525 c -22,-15 -23,-23 -23,-140 0,-160 -4,-155 146,-155 64,0 124,5 135,10 17,10 19,22 19,138 0,70 -5,134 -10,142 -14,23 -236,27 -267,5 z m 409,-57 c -16,-16 -16,-150 0,-166 7,-7 41,-12 83,-12 42,0 76,5 83,12 7,7 12,42 12,89 0,61 -4.7678,72.6967 -17.7678,77.6967 C 3124.2322,2479.6967 3004,2480 2992,2468 Z m 270,-88 c 3,-38 -3,-54.125 54.125,-55.875 69.2337,1.5253 59.3098,24.9585 61.875,55.875 -1,50 -8.625,63.125 -53.625,63.125 -51.3173,-0.7178 -61.8444,-3.7959 -62.375,-63.125 z m 182,9.75 c 0.875,-32.75 1,-34.75 30,-37.75 41.625,2.875 39.375,5 42,39.5 -2.3295,29.0968 -12,28.5 -37,28.5 -17,0 -37,-2.875 -35,-30.25 z m 120,5.25 c -4,-9 -2,-21 4,-27 15,-15 44,-1 40,19 -4,23 -36,29 -44,8 z"
+       id="path876"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csscsccssssscsccccccccsccscc"
+       style="fill:#555555;fill-opacity:1" />
+    <path
+       d="m 1858,3269 c -138,-184 -116,-454 67,-814 247,-489 715,-955 1290,-1285 243,-140 779,-380 849,-380 14,0 36,10 47,21 20,20 21,29 16,98 -3,42 -15,103 -26,135 -25,71 -88,157 -139,191 -20,13 -131,55 -247,93 -579,192 -956,412 -1306,761 -262,263 -440,525 -521,768 -34,103 -32,255 4,340 25,60 26,63 9,84 l -18,22 z"
+       id="path886"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccsscccccccccc"
+       style="fill:#555555;fill-opacity:1" />
+  </g>
+</svg>

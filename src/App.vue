@@ -1,32 +1,92 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <v-app>
+    <div id="app">
+        <div class="googlesans toolbar">
+            <img src="./assets/logo.svg" alt="logo" id="toolbar-logo">
+            Faidherbe
+        </div>
+        <transition name="fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
     </div>
-    <router-view/>
-  </div>
+    </v-app>
 </template>
 
+<script>
+export default {
+    name: 'App',
+}
+</script>
+
 <style>
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('assets/fonts/google-sans-regular.ttf') format('truetype');
+}
+
+body, html {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
 }
 
-#nav {
-  padding: 30px;
+.googlesans {
+    font-family: 'GoogleSans', sans-serif;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.toolbar {
+    height: 60px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.toolbar img {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#toolbar-logo {
+    max-height: 60%;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    transition: opacity 0.1s ease-in-out;
+}
+
+.fade-leave {
+
+}
+
+.fade-leave-active {
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    user-select: none;
+}
+
+[contenteditable="true"] , input, textarea {
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    -o-user-select: auto !important;
+    user-select: auto !important;
 }
 </style>
