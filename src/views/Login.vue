@@ -15,7 +15,11 @@
         <v-btn large color="indigo" text class="float-right" @click="connect" :loading="loading" :disabled="username.length <= 5 || password.length <= 5">Connexion</v-btn>
         <v-snackbar bottom v-model="snackbar" :timeout="10000">
             Identifiant ou mot de passe incorrect
-            <v-btn large text color="white" @click="snackbar = false">Ok</v-btn>
+            <template v-slot:action="{ attrs }">
+                <v-btn color="white" text v-bind="attrs" @click="snackbar = false">
+                    Ok
+                </v-btn>
+            </template>
         </v-snackbar>
     </div>
 </template>

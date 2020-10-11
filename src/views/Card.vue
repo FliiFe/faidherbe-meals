@@ -113,8 +113,9 @@ export default {
             }
             await meals.getMeals();
             const [available, booked] = [meals.available, meals.booked];
-            const unbooked = available.filter(a => !booked.some(b => b.serviceDate == a.serviceDate));
+            const unbooked = available.filter(a => !booked.some(b => b.serviceDate === a.serviceDate && b.serviceType === a.serviceType));
             if(unbooked.length == 0) {
+                // console.log(unbooked,available,booked)
                 this.snackMessage = "Tous les repas sont déjà réservés"
             } else {
                 const success = await meals.book(unbooked);
